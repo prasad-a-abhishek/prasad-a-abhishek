@@ -18,6 +18,26 @@ library alone. MIT licensed, tested, documented.
 | [ulid-pure](https://github.com/prasad-a-abhishek/ulid-pure) | ULID encode/decode, pure stdlib | `pip install ulid-pure` |
 | [crc16-modbus-pure](https://github.com/prasad-a-abhishek/crc16-modbus-pure) | CRC-16/MODBUS with canonical check value | `pip install crc16-modbus-pure` |
 
+### Benchmarked, not just claimed
+
+Every package was benchmarked against the most popular existing library for
+the same job — correctness first, then size, then speed (timeit best-of-5,
+identical inputs). Smaller won nearly everywhere (typically 5–50x fewer
+lines). These also won on speed:
+
+- [mcpschema](https://github.com/prasad-a-abhishek/mcpschema) — 7.1x faster than langchain-mcp-adapters, ~800x smaller install
+- [iban-pure](https://github.com/prasad-a-abhishek/iban-pure) — 23x faster than schwifty
+- [diffpriv-pure](https://github.com/prasad-a-abhishek/diffpriv-pure) — 12x faster than diffprivlib
+- [csvcomp](https://github.com/prasad-a-abhishek/csvcomp) — beats pandas on a 5,000-row keyed diff, ~5,500x smaller installed
+- [cronlint](https://github.com/prasad-a-abhishek/cronlint) — 5.2x faster than croniter
+- [isbn-pure](https://github.com/prasad-a-abhishek/isbn-pure) — 2.6x faster than isbnlib
+- [purl-parse-pure](https://github.com/prasad-a-abhishek/purl-parse-pure) — 2.2x faster than packageurl-python
+- [iso7064-pure](https://github.com/prasad-a-abhishek/iso7064-pure) — up to 4.1x faster than python-stdnum
+- [accept-header](https://github.com/prasad-a-abhishek/accept-header) — 2.75x faster than npm `accepts`
+
+Where pure Python lost on speed (zlib, xxhash, `cryptography`, scipy), the
+repos say so. The catalog marks every verified win: [browse all 123](https://prasad-a-abhishek.github.io/pure-libs/)
+
 ### The families
 
 - **Dev tools & CLI** — csvcomp, argpeek, hush, scrublog, urlcanary, cronlint…
